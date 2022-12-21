@@ -1,0 +1,12 @@
+{
+  "name": "cha-chess",
+  "short_name": "cha-chess",
+  "description": "Fun Chess with T3 stack and pusher by @robotkutya",
+  "icons": [
+    { "src": "images/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "images/icon-192.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
