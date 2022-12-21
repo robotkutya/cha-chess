@@ -1,17 +1,29 @@
-import { colors, pieces, Piece } from "../components/Piece";
+import React from "react";
+import { Chess } from "chess.js";
+import { Chessboard } from "react-chessboard";
+import type { Square } from "react-chessboard";
+
+const chess = new Chess();
 
 export default function Play() {
+  const [fen, setFen] = React.useState(chess.fen());
+
+  function onDrop(sourceSquare: Square, targetSquare: Square) {
+    const move = chess.move({
+      from: sourceSquare,
+      to: targetSquare,
+    });
+    console.log(move);
+    if (move === null) return false;
+
+    setFen(chess.fen());
+
+    return true;
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      {colors.map((color) => {
-        return (
-          <div className="flex gap-2">
-            {pieces.map((piece) => {
-              return <Piece type={piece} color={color} />;
-            })}
-          </div>
-        );
-      })}
+    <div className="grid place-items-center">
+      <Chessboard position={fen} onPieceDrop={onDrop} />
     </div>
   );
 }
