@@ -1,3 +1,5 @@
+import "@fontsource/dejavu-sans";
+
 export const pieces = [
   "pawn",
   "rook",
@@ -57,7 +59,7 @@ export const selectPiece = (type: PieceType, color: ColorTypes) => {
 
 export function Piece(props: PieceProps) {
   return (
-    <div className={"text-5xl text-black"}>
+    <div className="font-chess text-5xl text-black">
       {props.color === "white" && selectWhitePiece(props.type)}
       {props.color === "black" && selectBlackPiece(props.type)}
     </div>
