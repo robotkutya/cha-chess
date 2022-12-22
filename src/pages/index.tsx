@@ -7,8 +7,6 @@ import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
-  console.log(process.env.NODE_ENV === "production");
-  console.log(process.env.NODE_ENV === "development");
 
   return (
     <>
