@@ -5,9 +5,11 @@ export default function Pieces() {
     <div className="flex flex-col items-center justify-center gap-4">
       {colors.map((color) => {
         return (
-          <div className="flex gap-2">
+          <div key={`${color}-row`} className="flex gap-2">
             {pieces.map((piece) => {
-              return <Piece type={piece} color={color} />;
+              return (
+                <Piece key={`${color}-${piece}`} type={piece} color={color} />
+              );
             })}
           </div>
         );
